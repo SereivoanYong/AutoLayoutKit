@@ -62,6 +62,10 @@ extension NSLayoutXAxisAnchor {
   public static func + (anchor: NSLayoutXAxisAnchor, constant: CGFloat) -> AxisAttributes {
     return AxisAttributes(anchor: anchor, constant: constant)
   }
+  
+  public static func - (anchor: NSLayoutXAxisAnchor, constant: CGFloat) -> AxisAttributes {
+    return AxisAttributes(anchor: anchor, constant: -constant)
+  }
 }
 
 extension NSLayoutYAxisAnchor {
@@ -104,5 +108,9 @@ extension NSLayoutYAxisAnchor {
   
   public static func + (anchor: NSLayoutYAxisAnchor, constant: CGFloat) -> AxisAttributes {
     return AxisAttributes(anchor: anchor, constant: constant)
+  }
+  
+  public static func - (anchor: NSLayoutYAxisAnchor, constant: CGFloat) -> AxisAttributes {
+    return AxisAttributes(anchor: anchor, constant: -constant)
   }
 }

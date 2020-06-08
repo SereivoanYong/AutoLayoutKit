@@ -8,7 +8,7 @@ import UIKit
 
 // MARK: - XAxis
 
-public protocol NSLayoutXAxisEdgeGuide {
+public protocol NSLayoutXAxisEdgeGuide: AnyObject {
   
   var leftAnchor: NSLayoutXAxisAnchor { get }
   var rightAnchor: NSLayoutXAxisAnchor { get }
@@ -30,7 +30,7 @@ public protocol NSLayoutXAxisGuide: NSLayoutXAxisEdgeGuide {
 
 // MARK: - YAxis
 
-public protocol NSLayoutYAxisEdgeGuide {
+public protocol NSLayoutYAxisEdgeGuide: AnyObject {
   
   var topAnchor: NSLayoutYAxisAnchor { get }
   var bottomAnchor: NSLayoutYAxisAnchor { get }
@@ -59,7 +59,7 @@ public protocol NSLayoutGuide: NSLayoutXAxisGuide, NSLayoutYAxisGuide { }
 extension NSLayoutGuide {
   
   public var anchors: NSLayoutEdgeAnchors {
-    return .init(horizontal: horizontalAnchors, veritcal: verticalAnchors)
+    return .init(horizontal: horizontalAnchors, vertical: verticalAnchors)
   }
 }
 
@@ -86,11 +86,11 @@ public func == (lhs: NSLayoutYAxisEdgeAnchors, rhs: NSLayoutYAxisEdgeAnchors) ->
 }
 
 public func == (lhs: NSLayoutEdgeAnchors, rhs: NSLayoutEdgeAnchors) -> NSLayoutEdgeConstraints {
-  return .init(horizontal: lhs.horizontal == rhs.horizontal, vertical: lhs.veritcal == rhs.veritcal)
+  return .init(horizontal: lhs.horizontal == rhs.horizontal, vertical: lhs.vertical == rhs.vertical)
 }
 
 public struct NSLayoutEdgeAnchors {
   
   public var horizontal: NSLayoutXAxisEdgeAnchors
-  public var veritcal: NSLayoutYAxisEdgeAnchors
+  public var vertical: NSLayoutYAxisEdgeAnchors
 }
