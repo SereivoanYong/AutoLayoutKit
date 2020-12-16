@@ -1,5 +1,4 @@
-// swift-tools-version:5.2
-
+// swift-tools-version:5.3
 import PackageDescription
 
 let package = Package(
@@ -8,10 +7,9 @@ let package = Package(
     .iOS(.v9)
   ],
   products: [
-    .library(name: "AutoLayoutKit", targets: ["AutoLayoutKit"]),
+    .library(name: "AutoLayoutKit", targets: ["AutoLayoutKit"])
   ],
   targets: [
-    .target(name: "AutoLayoutKit", dependencies: [])
-  ],
-  swiftLanguageVersions: [.v5]
+    .target(name: "AutoLayoutKit")
+  ]
 )
